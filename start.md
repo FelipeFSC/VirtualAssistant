@@ -18,7 +18,8 @@ Na raiz ficam também:
 
 - `config.json`: configuração da máquina do usuário, fora do git. O campo `envFile`
   aponta para o `.env`, que pode estar em qualquer pasta. O modelo é `config.example.json`.
-- `.env.example`: modelo das variáveis de segredo (sem valores).
+- `.env.example`: apenas um exemplo do formato do `.env`. **Nunca altere este arquivo**
+  nem coloque nele nomes de variáveis reais.
 
 | O quê | Projeto | Pessoal | Quando ler |
 |---|---|---|---|
@@ -123,7 +124,7 @@ repositório) ou **pessoal** (`local/`, fica só na máquina dele). Se ele já d
 | Contexto | `context.md` |
 | Nova ferramenta | subpasta em `tools/`, com `README.md` |
 | Plano de uma issue | `plans/<sistema>/<issue>/`. Pergunte o sistema e a issue se não souber |
-| Novo segredo (senha, token) | pergunte ao usuário o nome da variável (nunca invente). Adicione-a em `.env.example` na raiz, sem valor e com um comentário dizendo para que serve. O usuário preenche no `.env` dele |
+| Novo segredo (senha, token) | pergunte ao usuário o nome da variável (nunca invente) e use esse nome. Quem cria a variável no `.env` é o usuário. Não altere o `.env.example` |
 
 Os arquivos de entrada das IAs (`.claude/`, `.cursor/`, `.github/copilot-instructions.md`)
 só apontam para `ai/` e `local/`. Nunca coloque regras neles.

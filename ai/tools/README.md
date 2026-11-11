@@ -13,5 +13,6 @@ Nunca ficam aqui. Toda ferramenta que precisa de segredo:
 2. Pega o caminho do `.env` no campo `envFile`. Ele pode estar em qualquer pasta da máquina.
 3. Carrega as variáveis desse `.env`.
 
-Ao criar uma ferramenta que precisa de segredo, adicione a variável, sem valor, em
-`.env.example` na raiz, com um comentário dizendo qual ferramenta a usa.
+Ao criar uma ferramenta que precisa de segredo, pergunte ao usuário o nome da
+variável e use esse nome. Quem cria a variável no `.env` é o usuário. Não altere o
+`.env.example`: ele é só um exemplo do formato.
