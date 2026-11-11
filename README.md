@@ -30,6 +30,7 @@ ai/
   commands/         um arquivo por comando (commit-message, criar-pr, revisar-codigo)
   skills/           conhecimento sob demanda (git-workflow)
   tools/            integrações (vazio nesta versão)
+  plans/            conhecimento dos sistemas: <sistema>/<issue>/<arquivos de plano>
 local/              mesma estrutura de ai/, só que pessoal e fora do git
 config.example.json modelo da configuração da máquina
 config.json         sua configuração (fora do git): "envFile" = caminho do seu .env

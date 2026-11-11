@@ -28,6 +28,7 @@ Na raiz ficam também:
 | Comandos | `ai/commands/<nome>.md` | `local/commands/<nome>.md` | quando o usuário pedir um comando ("/commit-message") |
 | Skills | `ai/skills/<nome>.md` | `local/skills/<nome>.md` | quando a tarefa combinar com a skill, ou quando um agente indicar |
 | Ferramentas | `ai/tools/` | `local/tools/` | quando precisar de uma integração |
+| Planos (conhecimento dos sistemas) | `ai/plans/<sistema>/<issue>/` | `local/plans/<sistema>/<issue>/` | sempre que o usuário mencionar um sistema ou uma issue |
 | Segredos | — | o `.env` indicado em `config.json` → `envFile` | **nunca leia nem exiba**: só as ferramentas usam |
 
 **Como combinar as duas pastas:**
@@ -35,6 +36,11 @@ Na raiz ficam também:
 - O que existe só em `local/` soma-se ao projeto.
 - Quando houver o mesmo nome nas duas, vale o de `local/`.
 - As regras de `local/rules.md` se somam às de `ai/rules.md`.
+
+**Pasta `plans/`:** é a base de conhecimento sobre os sistemas da empresa. A estrutura
+é `plans/<nome-do-sistema>/<numero-da-issue>/<arquivos de plano>`. Antes de trabalhar
+em um sistema, leia a pasta dele (em `ai/plans/` e `local/plans/`) para entender o
+histórico e as decisões já tomadas. Detalhes em `ai/plans/README.md`.
 
 Os arquivos que começam com `_` (ex.: `_template.md`) são modelos. Não são agentes,
 comandos nem skills ativos.
@@ -83,6 +89,7 @@ Faça isto **uma única vez por IA**.
    - Agente pedido → `agents/<nome>.md`
    - Comando pedido → `commands/<nome>.md`
    - Skill relevante → `skills/<nome>.md`
+   - Sistema ou issue mencionado → `plans/<sistema>/` e `plans/<sistema>/<issue>/`
 
    Nunca leia, exiba ou commite o `.env` (caminho em `config.json` → `envFile`).
    Não crie regras, agentes, comandos ou skills fora de `ai/` ou `local/`.
@@ -90,7 +97,7 @@ Faça isto **uma única vez por IA**.
 
 4. Se o arquivo já existir, **não sobrescreva**: mostre ao usuário o que existe e pergunte.
 5. Prepare a pasta `local/`, criando só o que faltar e sem sobrescrever nada:
-   - as subpastas `agents/`, `commands/`, `skills/` e `tools/`;
+   - as subpastas `agents/`, `commands/`, `skills/`, `tools/` e `plans/`;
    - `rules.md` com o título `# Regras pessoais` e uma lista vazia;
    - `context.md` com o título `# Contexto pessoal`. Pergunte o nome do usuário e anote.
 6. Configure o `.env`:
@@ -115,6 +122,7 @@ repositório) ou **pessoal** (`local/`, fica só na máquina dele). Se ele já d
 | Nova skill | `skills/<nome>.md`, copiando `ai/skills/_template.md` |
 | Contexto | `context.md` |
 | Nova ferramenta | subpasta em `tools/`, com `README.md` |
+| Plano de uma issue | `plans/<sistema>/<issue>/`. Pergunte o sistema e a issue se não souber |
 | Novo segredo (senha, token) | pergunte ao usuário o nome da variável (nunca invente). Adicione-a em `.env.example` na raiz, sem valor e com um comentário dizendo para que serve. O usuário preenche no `.env` dele |
 
 Os arquivos de entrada das IAs (`.claude/`, `.cursor/`, `.github/copilot-instructions.md`)

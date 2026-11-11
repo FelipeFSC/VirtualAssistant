@@ -14,6 +14,7 @@ local/
   commands/       seus comandos
   skills/         suas skills
   tools/          suas ferramentas e integrações
+  plans/          seus planos: <sistema>/<issue>/<arquivos de plano>
 ```
 
 Os segredos (senhas, tokens) não ficam necessariamente aqui: o `.env` pode estar em
