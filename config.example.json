@@ -1,0 +1,4 @@
+{
+  "_comentario": "Modelo. Copie para config.json (fora do git) e ajuste para a sua máquina. Use barras normais no caminho: C:/Users/voce/segredos/.env",
+  "envFile": "C:/caminho/para/o/seu/.env"
+}

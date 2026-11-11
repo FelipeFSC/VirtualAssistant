@@ -1,0 +1,18 @@
+# Configuração da máquina (caminho do .env etc.). O modelo é o config.example.json
+config.json
+
+# Segredos. O modelo é o .env.example
+.env
+.env.*
+!.env.example
+
+# Pasta pessoal: só o README é versionado
+local/*
+!local/README.md
+
+# Arquivos de entrada criados pelo start.md (cada pessoa escolhe a sua IA)
+.claude/
+.cursor/
+.github/copilot-instructions.md
+AGENTS.md
+CLAUDE.md
